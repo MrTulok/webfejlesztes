@@ -1,0 +1,750 @@
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing:border-box;
+
+	font-family: 'Cinzel', serif;
+	letter-spacing:2px;
+	line-height: 1.5em;
+	scroll-behavior: smooth;
+}
+
+/*fejléc*/
+
+header{
+	background-image:url("menu/napora1.jpg");
+	background-position:center;
+	background-attachment:fixed;
+	background-size:cover;
+	background-repeat: no-repeat;
+	position:relative;
+	text-align: center;
+	height:55vh;
+}
+
+header h1{
+	padding:2rem;
+}
+
+header nav{
+	display:none;
+}
+
+header p{
+	width:100%;
+}
+
+/*Haburger*/
+
+.hamburger{
+	position: relative;
+	display:block;
+	width:35px;
+	cursor:pointer;
+	margin-left:10px;
+
+	border: none;
+	background: none;
+	outline: none;
+	appearance: none;
+}
+
+.hamburger .bar,.hamburger::after,.hamburger::before{
+	content:"";
+	display:block;
+	width:100%;
+	height:4px;
+	background-color: black;
+	margin: 5px 0px;
+	transition:0.4s;
+}
+
+.hamburger.is-active::before{
+	transform:rotate(-45deg) translate(-7px,7px);
+	position:relative;
+	z-index: 100;
+}
+
+.hamburger.is-active .bar{
+	opacity: 0;
+}
+
+.hamburger.is-active::after{
+	transform:rotate(45deg) translate(-7px,-6px);
+	position:relative;
+	z-index: 100;
+}
+
+.mobile-nav{
+	display: none;
+	position: absolute;
+	overflow:auto;
+	top:0;
+	left:0;
+	width:100%;
+	height:55%;
+	z-index: 98;
+
+	background-color: rgb(238,228,220,0.9);
+}
+
+.mobile-nav.is-active{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+}
+
+.mobile-nav a{
+	display:flex;
+	justify-content: center;
+	text-decoration:none;
+	color:black;
+	padding:10px 15px;
+	border-radius:15px;
+	width:250px;
+}
+
+.mobile-nav li{
+	list-style-type: none;
+	margin:0.2em;
+}
+
+.mobile-nav .kicsi a{
+	max-width:150px;
+}
+
+header a.active, header li a:hover, .mobile-nav a:hover, .mobile-nav a.active{
+	background-color:rgb(230, 212, 198);
+	font-weight: bold;
+}
+
+/*Lenyilo*/
+
+.nyil{
+	display:block;
+	width:10px;
+	cursor:pointer;
+	margin-left: 15px;
+
+	border: none;
+	background: none;
+	outline: none;
+	appearance: none;
+}
+
+.nyil .vonal,.nyil::after{
+	content:"";
+	display:block;
+	width:100%;
+	height:4px;
+	background-color: black;
+	margin: 5px 0px;
+	transition:0.4s;
+}
+
+.nyil .vonal{
+	transform:rotate(-45deg) translate(-5px,3px);
+}
+
+.nyil::after{
+	transform:rotate(45deg) translate(-7px,2px);
+}
+
+.nyil.is-active .vonal{
+	transform:rotate(45deg) translate(3px,4px);
+}
+
+.nyil.is-active::after{
+	transform:rotate(-45deg) translate(-2px,-7px);
+}
+
+.kicsi li{
+	display:inline-block;
+}
+
+.kicsi{
+	display:none;
+}
+
+.kicsi.is-active{
+	display:flex;
+	flex-direction: column;
+	font-size: 80%;
+	max-width:150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.active+.kicsi.is-active{
+	background-color: rgb(230, 212, 198,0.6);
+	border-radius: 0 0 15px 15px;
+}
+
+/*Idézet*/
+
+header #idezet{
+	position:absolute;
+	font-style:italic;
+	bottom:0;
+}
+
+/*Oldal tartalma*/
+
+.container{
+	display: flex;
+	flex-direction: column;
+}
+
+.container>*{
+	margin:1%;
+	height:fit-content;
+}
+
+label.error{
+	color:red;
+	font-size: 12px;
+}
+
+/*Kezdőlap*/
+
+/*Történet*/
+
+#tortenet{
+	margin:32px;
+	text-align:justify;
+}
+
+#tortenet h2{
+	text-align:center;
+}
+
+#tortenet p{
+	text-indent:40px;
+	padding:20px;
+}
+
+hr{
+	width:70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#tortenet ul{
+	list-style-image:url("kezdo/napicon.png");
+	padding-left:60px;
+}
+
+#tortenet li{
+	margin:10px;
+}
+
+/*készítés*/
+
+#napkesz{
+	background-image:url("kezdo/napora2.jpg");
+	opacity:0.75;
+	text-align:center;
+	background-position:center;
+	background-attachment:fixed;
+	background-size:cover;
+	background-repeat: no-repeat;
+	margin:0;
+	padding:10px;
+}
+
+#napkesz h2{
+	background-color:rgb(238,228,220,0.85);
+	width: 90%;
+	border-radius:15px;
+	padding:20px;
+	margin: 0px auto 20px auto;
+}
+
+#napkesz article{
+	display:flex;
+	flex-direction:column;
+	width:90%;
+	background-color:rgb(238,228,220,0.85);
+	border-radius:15px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:10px;
+}
+
+#napkesz section{
+	display:flex;
+	flex-direction:column;
+	padding:25px;
+	font-weight:bold;
+}
+
+#napkesz figure{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin:0;
+}
+
+p.sorsz{
+	font-size:70%;
+	font-style:italic;
+	padding:0.4em;
+}
+
+img{
+	width:60%;
+	height:auto;
+	border:1px solid black;
+	margin:10px;
+}
+
+/*Érdeklődés*/
+
+#kerd #gyak{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	padding:20px;
+}
+
+#kerd #gyak h2{
+	margin-bottom:20px;
+}
+
+#kerd #gyak section{
+	width:90%;
+}
+
+.kerdes{
+	width:100%;
+	margin:10px 10px 0 0;
+	padding:15px;
+	border-radius:15px;
+	background-color: rgb(238,228,220,0.85);
+	border:none;
+}
+
+.kerdes:hover,.kerdes.is-active{
+	cursor: pointer;
+	background-color:rgb(230, 212, 198);
+	font-weight: bold;
+}
+
+.valasz{
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+	width:90%;
+	max-height: 0;
+	text-align: center;
+	transition: max-height 0.4s ease;
+	opacity: 0;
+}
+
+.is-active+.valasz{
+	max-height:1000px;
+	height:100%;
+	padding:15px;
+	border-radius: 0 0 15px 15px;
+	opacity:1;
+
+	border-style:none solid solid;
+	border-width: 3px;
+	border-color: rgb(230, 212, 198);
+}
+
+#kerd #gyak span{
+	font-weight: bold;
+}
+
+#kerd #erdek{
+	background-image:url("kezdo/napora2.jpg");
+	opacity:0.75;
+	text-align:center;
+	background-position:center;
+	background-attachment:fixed;
+	background-size:cover;
+	background-repeat: no-repeat;
+	height:80vh;
+	margin:0;
+	padding: 0;
+}
+
+#kerd #erdek p{
+	font-size:80%;
+	font-style: italic;
+}
+
+#kerd #erdek #myform{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding:10px;
+}
+
+#kerd #erdek #oszt{
+	width:85%;
+	background-color:rgb(238,228,220,0.85);
+	border-radius:15px;
+	margin:auto;
+}
+
+#kerd #erdek #myform p, #kerd #erdek h2{
+	margin:8px;
+}
+
+#kerd #erdek #myform div{
+	flex-basis:100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#kerd #erdek #myform label{
+	margin:4px;
+}
+
+#kerd #erdek #myform #level{
+	height:15vh;
+}
+
+/*napóráink*/
+
+.galeria{
+	margin:auto;
+	width:100%;
+	height:60vw;
+}
+
+#napkep article{
+	text-align: center;
+}
+
+#quiz .is-active{
+	display:none;
+}
+
+#quiz hr{
+	margin:1% auto;
+	height:4px;
+	background-color: black;
+}
+
+#quiz #termekek{
+	display:none;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#quiz #termekek div section{
+	padding-left: 10px;
+}
+
+#quiz #termekek div{
+	display: none;
+	background-color:rgb(238,228,220,0.85);
+	border-radius:15px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:10px;
+	padding:15px;
+	width:86%;
+}
+
+#quiz #termekek div ul{
+	list-style-image: url("kezdo/napicon.png");
+}
+
+#quiz #termekek div li{
+	margin:4px;
+}
+
+#quiz #nincs{
+	display:none;
+}
+
+#quiz #szuro{
+	margin:15px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#quiz #szuro div{
+	display:flex;
+	flex-direction: column;
+	background-color:rgb(238,228,220,0.85);
+	border-radius:15px;
+	padding: 15px;
+	margin:10px auto;
+	width:90%;
+}
+
+#quiz #szuro div p,#quiz #szuro div label{
+	margin:4px;
+}
+
+.gomb{
+	margin:10px;
+	padding:4px;
+}
+
+/*Kapcsolatok*/
+
+#kapcs .container{
+	align-items: center;
+}
+
+#cim,#kapcsolat,#partner{
+	text-align: center;
+	background-color:rgb(238,228,220);
+	border-radius: 15px;
+	padding:10px;
+	width:80%;
+}
+
+#cim h3,#kapcsolat h3,#partner h3{
+	margin-bottom:20px;
+}
+
+#kapcsolat a{
+	color:black;
+}
+
+#partner ul{
+	list-style-image:url("kapcs/napicon.png");
+	text-align: left;
+	margin-left:15vw;
+}
+
+#partner a{
+	text-decoration: none;
+	color: black;
+}
+
+#kapcs .valaszt{
+	display: block;
+	content: "";
+	width:70vw;
+	height:1.5px;
+	background-color: black;
+	border-radius: 15px;
+}
+
+/*Lap alja*/
+
+footer{
+	background-color:rgb(238,228,220);
+	text-align:center;
+}
+
+.vissza{
+	margin:0px;
+	padding:20px;
+	font-size: 90%;
+}
+
+.vissza a{
+	text-decoration:none;
+	color:black;
+	font-weight:bold;
+}
+
+.vissza a:hover{
+	background-color:rgb(230, 212, 198);
+	font-weight: bold;
+	border-radius: 15px;
+	padding:10px 15px;
+}
+
+@media all and (min-width: 600px){
+
+	/*kezdőlap*/
+
+	#napkesz h2{
+		width:80%;
+	}
+	
+	#napkesz article{
+		flex-direction:row;
+		width:80%;
+		align-items:center;
+	}
+	
+	#napkesz article:nth-child(2n+1) figure{
+		order:-1;
+	}
+	
+	#napkesz img{
+		width:70%;
+	}
+	
+	/*érdeklődés*/
+
+	#quiz #termekek{
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	#quiz #szuro div{
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	#quiz #szuro div p,#quiz #szuro .budget label{
+		flex-basis:100%;
+	}
+}
+
+@media all and (min-width: 758px){
+
+	/*fejléc*/
+
+	.mobile-nav.is-active, .hamburger{
+		display:none;
+	}
+
+	header nav{
+		display: block;
+	}
+	
+	header ul{
+        display: flex;
+        justify-content:center;
+        align-items: flex-start;
+		width:100%;
+		height:30vh
+    }
+
+	header li{
+		display:flex;
+		margin:0.4em;
+		list-style-type: none;
+	}
+
+	header a{
+		background-color:rgb(238,228,220,0.8);
+		border-radius:15px;
+		padding:15px;
+		text-decoration: none;
+		color:black;
+	}
+
+	/*leugró gomb*/
+	
+	.dropdown {
+		display: flex;
+		position: relative;
+	}
+
+	.dropbtn{
+		text-decoration:none;
+		background-color:rgb(238,228,220,0.8);
+		color:black;
+		padding:15px;
+		border-radius:15px;
+	}
+
+	.dropdown-content {
+		top:55px;
+		display: none;
+		position: absolute;
+	}
+
+	.dropdown-content a {
+		display: inline-block;
+		margin-top:5px;
+		font-size:80%;
+		width:9em;
+	}
+
+	.dropdown:hover .dropdown-content{
+		display: block;
+	}
+
+	/*érdeklődés*/
+
+	#kerd #gyak{
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	#kerd #gyak section{
+		flex-basis:48%;
+		margin:1%;
+	}
+
+	#kerd #gyak section .kerdes{
+		height: 100%;
+		min-height:110px;
+	}
+
+	#kerd #gyak h2{
+		flex-basis:100%;
+		text-align: center;
+	}
+
+	#kerd #erdek{
+		height:60vh;
+	}
+
+	#kerd #erdek #oszt{
+		width:70%;
+	}
+
+	/*munkáink*/
+
+	.galeria{
+		height:30vw;
+	}
+
+	#quiz #termekek div{
+		flex-basis:32%;
+	}
+
+	#quiz #termekek div img{
+		width:50%;
+		height:auto;
+	}
+
+	#quiz #szuro div{
+		flex-basis: 48%;
+		margin:1%;
+	}
+
+	#quiz #szuro .budget{
+		flex-basis: 100%;
+	}
+
+	/*Kapcsolatok*/
+
+	#kapcs .container{
+		flex-direction: row;
+	}
+
+	#cim,#kapcsolat,#partner{
+		flex-basis:33%;
+		height:35vh;
+	}
+
+	#kapcs .valaszt{
+		width:1.5px;
+		height: 20vh;
+	}
+
+	#partner ul{
+		margin-left:5vw;
+	}
+}
+
+@media all and (min-width: 992px){
+	#quiz #termekek div{
+		flex-basis:24%;
+	}
+
+	#quiz #termekek div img{
+		width:70%;
+	}
+}
